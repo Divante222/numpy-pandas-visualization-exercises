@@ -3,17 +3,17 @@
 
 # 100 numpy exercises
 
-This is a collection of exercises that have been collected in the numpy mailing list, on stack 
-overflow
-and in the numpy documentation. The goal of this collection is to offer a quick reference for both old
-and new 
-users but also to provide a set of exercises for those who teach.
+# This is a collection of exercises that have been collected in the numpy mailing list, on stack 
+# overflow
+# and in the numpy documentation. The goal of this collection is to offer a quick reference for both old
+# and new 
+# users but also to provide a set of exercises for those who teach.
 
 
-If you find an error or think you've a better way to
- solve some of them, feel
-free to open an issue at <https://github.com/rougier/numpy-100>.
-File automatically generated. See the documentation to update questions/answers/hints programmatically.
+# If you find an error or think you've a better way to
+#  solve some of them, feel
+# free to open an issue at <https://github.com/rougier/numpy-100>.
+# File automatically generated. See the documentation to update questions/answers/hints programmatically.
 
 #### 1. Import the numpy package under the name `np` (★☆☆)
 
@@ -48,14 +48,22 @@ File automatically generated. See the documentation to update questions/answers/
 #### 16. How to add a border (filled with 0's) around an existing array? (★☆☆)
 
 #### 17. What is the result of the following expression? (★☆☆)
-```python
-0 * np.nan
-np.nan == np.nan
-np.inf > np.nan
-np.nan - np.nan
-np.nan in set([np.nan])
-0.3 == 3 * 0.1
-```
+
+
+
+
+# ``` python
+# 0 * np.nan
+# np.nan == np.nan
+# np.inf > np.nan
+# np.nan - np.nan
+# np.nan in set([np.nan])
+# 0.3 == 3 * 0.1
+# ```
+
+
+
+
 
 #### 18. Create a 5x5 matrix with values 1,2,3,4 just below the diagonal (★☆☆)
 
@@ -73,31 +81,60 @@ np.nan in set([np.nan])
 
 #### 25. Given a 1D array, negate all elements which are between 3 and 8, in place. (★☆☆)
 
+
 #### 26. What is the output of the following script? (★☆☆)
-```python
+
+
+
+# ```python
+
+
+
 # Author: Jake VanderPlas
 
-print(sum(range(5),-1))
-from numpy import *
-print(sum(range(5),-1))
-```
+
+
+
+
+# print(sum(range(5),-1))
+# from numpy import *
+# print(sum(range(5),-1))
+# ```
+
+
+
 
 #### 27. Consider an integer vector Z, which of these expressions are legal? (★☆☆)
-```python
-Z**Z
-2 << Z >> 2
-Z <- Z
-1j*Z
-Z/1/1
-Z<Z>Z
-```
+
+
+
+
+# ```python
+# Z**Z
+# 2 << Z >> 2
+# Z <- Z
+# 1j*Z
+# Z/1/1
+# Z<Z>Z
+# ```
+
+
+
 
 #### 28. What are the result of the following expressions? (★☆☆)
-```python
-np.array(0) / np.array(0)
-np.array(0) // np.array(0)
-np.array([np.nan]).astype(int).astype(float)
-```
+
+
+
+
+# ```python
+# np.array(0) / np.array(0)
+# np.array(0) // np.array(0)
+# np.array([np.nan]).astype(int).astype(float)
+# ```
+
+
+
+
 
 #### 29. How to round away from zero a float array ? (★☆☆)
 
@@ -106,9 +143,17 @@ np.array([np.nan]).astype(int).astype(float)
 #### 31. How to ignore all numpy warnings (not recommended)? (★☆☆)
 
 #### 32. Is the following expressions true? (★☆☆)
-```python
-np.sqrt(-1) == np.emath.sqrt(-1)
-```
+
+
+
+
+
+# ```python
+# np.sqrt(-1) == np.emath.sqrt(-1)
+# ```
+
+
+
 
 #### 33. How to get the dates of yesterday, today and tomorrow? (★☆☆)
 
@@ -153,11 +198,19 @@ np.sqrt(-1) == np.emath.sqrt(-1)
 #### 53. How to convert a float (32 bits) array into an integer (32 bits) in place?
 
 #### 54. How to read the following file? (★★☆)
-```
-1, 2, 3, 4, 5
-6,  ,  , 7, 8
- ,  , 9,10,11
-```
+
+
+
+
+# ```
+# 1, 2, 3, 4, 5
+# 6,  ,  , 7, 8
+#  ,  , 9,10,11
+# ```
+
+
+
+
 
 #### 55. What is the equivalent of enumerate for numpy arrays? (★★☆)
 

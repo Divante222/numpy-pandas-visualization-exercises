@@ -221,6 +221,7 @@ print(c)
 print()
 # Exercise 5 - Transpose c and print out transposed result.
 print(np.transpose(c))
+
 # Exercise 6 - Get the dot product of the array c with c. 
 cc = [
     [1, 2, 3],
