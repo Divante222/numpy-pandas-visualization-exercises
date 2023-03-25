@@ -62,8 +62,9 @@ print()
 # print(fruits.value_counts().max())
 # print(fruits.mode())
 # print()
-print('largest\n\n')
-print(fruits.value_counts().nlargest(),'\n')
+print('largest:', fruits.value_counts().nlargest(keep='first'),'\n')
+print()
+
 
 # Determine the string value that occurs least frequently in fruits.
 print(fruits.value_counts().nsmallest(keep='all'))

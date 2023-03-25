@@ -16,36 +16,114 @@
 # File automatically generated. See the documentation to update questions/answers/hints programmatically.
 
 #### 1. Import the numpy package under the name `np` (★☆☆)
+import numpy as np
+import numpy.matlib
 
 #### 2. Print the numpy version and the configuration (★☆☆)
+print(np.__version__)
+
+
 
 #### 3. Create a null vector of size 10 (★☆☆)
+def null_array(n):
+    x = np.zeros(n)
+    return x
+print(np.zeros(20))
+null_vector = null_array(10)
+print(type(null_vector))
+
 
 #### 4. How to find the memory size of any array (★☆☆)
+print(null_vector.size)
+print(null_vector.itemsize)
+
 
 #### 5. How to get the documentation of the numpy add function from the command line? (★☆☆)
+print(np.info(np.add))
+
 
 #### 6. Create a null vector of size 10 but the fifth value which is 1 (★☆☆)
+new_null_vector = np.zeros(10)
+
+new_null_vector[4] = 5
+
+print(new_null_vector)
+print(len(new_null_vector))
+
+# new_null_vector = np.insert(new_null_vector, 5, 5)
+
+
 
 #### 7. Create a vector with values ranging from 10 to 49 (★☆☆)
+the_vector = np.arange(10,50)
+
+print(the_vector)
+print(type(the_vector))
+
 
 #### 8. Reverse a vector (first element becomes last) (★☆☆)
+print()
+the_vector = np.flip(the_vector)
+print(the_vector)
+print()
 
 #### 9. Create a 3x3 matrix with values ranging from 0 to 8 (★☆☆)
+the_vector = np.arange(0,9).reshape(3,3)
 
+print(the_vector)
+print()
 #### 10. Find indices of non-zero elements from [1,2,0,0,4,0] (★☆☆)
+the_array = np.array([1,2,0,0,4,0])
+
+indices = np.nonzero(the_array)[0]
+
+print(indices)
+
+
+
+
+
 
 #### 11. Create a 3x3 identity matrix (★☆☆)
+print()
+print(np.matlib.empty((3,3)))
+print()
+
 
 #### 12. Create a 3x3x3 array with random values (★☆☆)
+print('+++++++++++++++++++++')
+print(np.random.random((3,3,3)))
 
 #### 13. Create a 10x10 array with random values and find the minimum and maximum values (★☆☆)
+print('\n\n\n')
+the_array = np.random.random((10,10))
+print(the_array)
+print('\n\n\n')
+print(np.amax(the_array))
+print(np.amin(the_array))
+
+print('\n\n\n')
 
 #### 14. Create a random vector of size 30 and find the mean value (★☆☆)
+the_vector = np.random.rand(30)
+print(the_vector)
+print('\n\n\n')
+
 
 #### 15. Create a 2d array with 1 on the border and 0 inside (★☆☆)
+the_array = np.ones((5,5))
+the_array[1:-1, 1:-1] = 0
+print(the_array)
+print('\n\n\n')
+
 
 #### 16. How to add a border (filled with 0's) around an existing array? (★☆☆)
+
+the_array = np.ones((5,5))
+the_array = np.pad(the_array, pad_width=2, mode='constant', constant_values = 0)
+
+print(the_array)
+
 
 #### 17. What is the result of the following expression? (★☆☆)
 
@@ -53,14 +131,14 @@
 
 
 # ``` python
+
+# ```
 # 0 * np.nan
 # np.nan == np.nan
 # np.inf > np.nan
 # np.nan - np.nan
 # np.nan in set([np.nan])
 # 0.3 == 3 * 0.1
-# ```
-
 
 
 
