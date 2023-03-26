@@ -2,7 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-
 df = pd.DataFrame(
     {
         "Name": [
@@ -64,5 +63,25 @@ air_quality = pd.read_csv('data/air_quality_no2.csv', index_col=0, parse_dates=T
 
 print(air_quality)
 
-print(air_quality.plot())
-plt.show()
+# print(air_quality.plot())
+# plt.show()
+# air_quality["station_paris"].plot()
+# plt.show()
+
+# air_quality.plot.box()
+# plt.show()
+
+# axs = air_quality.plot.area(figsize=(15, 10), subplots=True)
+# plt.show()
+
+# fig, axs = plt.subplots(figsize=(12, 4))
+
+# air_quality.plot.area(ax=axs)
+
+# axs.set_ylabel('NO$_2$ concentration')
+
+# fig.savefig("no2_concentrations.png")
+
+# plt.show()
+
+air_quality = pd.read_csv("data/air_quality_no2.csv", index_col = 0, parse_dates=True)
