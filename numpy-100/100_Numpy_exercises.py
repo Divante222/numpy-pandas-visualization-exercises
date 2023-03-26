@@ -144,11 +144,21 @@ print(the_array)
 
 
 #### 18. Create a 5x5 matrix with values 1,2,3,4 just below the diagonal (★☆☆)
+x = np.matrix('1 1 1 1 1; 1 1 1 1 1; 1 2 1 1 1; 1 1 3 1 1; 1 1 1 4 1')
 
+print(x)
+print()
+mat = np.zeros((5, 5), dtype=int)
+np.fill_diagonal(mat[1:], [1, 2, 3, 4])
+print(mat)
 #### 19. Create a 8x8 matrix and fill it with a checkerboard pattern (★☆☆)
-
-#### 20. Consider a (6,7,8) shape array, what is the index (x,y,z) of the 100th element? (★☆☆)
-
+x = np.zeros((8,8), dtype='int')
+x[0::2, 0::2] = 7
+x[1::2, 1::2] = 7
+print(x)
+#### 20. Consider a (6,7,8) shape array, ewhat is the index (x,y,z) of th 100th element? (★☆☆)
+x = np.zeros((6,7,8))
+print(x.item(100))
 #### 21. Create a checkerboard 8x8 matrix using the tile function (★☆☆)
 
 #### 22. Normalize a 5x5 random matrix (★☆☆)
