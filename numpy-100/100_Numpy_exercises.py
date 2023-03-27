@@ -170,6 +170,9 @@ print(theboard)
 
 #### 22. Normalize a 5x5 random matrix (★☆☆)
 
+
+
+
 #### 23. Create a custom dtype that describes a color as four unsigned bytes (RGBA) (★☆☆)
 
 #### 24. Multiply a 5x3 matrix by a 3x2 matrix (real matrix product) (★☆☆)
