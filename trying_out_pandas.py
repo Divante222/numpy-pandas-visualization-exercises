@@ -148,4 +148,6 @@ air_quality = pd.read_csv("data/air_quality_long.csv", index_col="date.utc", par
 
 print(air_quality.head())
 
-print(titanic.sort_values(by="Age".head()))
+print(titanic.sort_values(by="Age").head())
+
+print(titanic.sort_values(by=['Pclass', 'Age'], ascending=False).head())
