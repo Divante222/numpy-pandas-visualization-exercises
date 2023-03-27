@@ -24,7 +24,7 @@ for i in fruits.values:
 
 # Confirm the data type of the values in fruits.
 for i in fruits.values:
-    print(type(i))
+    print(i)
 
 
 # Output only the first five values from fruits. 
@@ -59,13 +59,17 @@ print()
 
 
 # Determine the string value that occurs most frequently in fruits.
-# print(fruits.value_counts().max())
-# print(fruits.mode())
-# print()
-print('largest:', fruits.value_counts().nlargest(keep='first'),'\n')
+
+
+print(fruits.mode())
 print()
+
+
 
 
 # Determine the string value that occurs least frequently in fruits.
 print(fruits.value_counts().nsmallest(keep='all'))
 
+print('largest:', fruits.value_counts().nlargest(keep='first'),'\n')
+
+print(fruits.value_counts())

@@ -18,7 +18,7 @@
 #### 1. Import the numpy package under the name `np` (★☆☆)
 import numpy as np
 import numpy.matlib
-
+from sklearn.preprocessing import normalize
 #### 2. Print the numpy version and the configuration (★☆☆)
 print(np.__version__)
 
@@ -160,6 +160,13 @@ print(x)
 x = np.zeros((6,7,8))
 print(x.item(100))
 #### 21. Create a checkerboard 8x8 matrix using the tile function (★☆☆)
+
+x = np.matrix('1 0; 0 1')
+
+theboard = np.tile(x, (4,4))
+
+print(theboard)
+
 
 #### 22. Normalize a 5x5 random matrix (★☆☆)
 
