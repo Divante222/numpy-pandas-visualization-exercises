@@ -84,6 +84,15 @@ print(numbers_plus_5)
 # BONUS Make a variable named "primes" that is a list containing the prime numbers in the numbers list.
 #  *Hint* you may want to make or find a helper function that determines if a given number is prime or not.
 
+the_list = []
+for i in range(1, len(numbers)):
+    for j in numbers:
+        print(j)
+
+
+   
+
+
 
 
 

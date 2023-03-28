@@ -102,3 +102,8 @@ my_array.std()
 
 matrix.mean()
 
+# value_counts().sort_index() use this to sort index
+
+
+#adding the h at the end of kind='barh' gives a horizontal chart
+
