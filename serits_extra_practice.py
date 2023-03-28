@@ -73,9 +73,17 @@ print(negative_numbers)
 # Exercise 14 - use a list comprehension w/ a conditional in order to produce a list of numbers with 2 or more numerals
 
 # Exercise 15 - Make a variable named numbers_squared that contains the numbers list with each element squared. Output is [4, 9, 16, etc...]
-
+numbers_squared = [num*num for num in numbers]
+print(numbers_squared)
 # Exercise 16 - Make a variable named odd_negative_numbers that contains only the numbers that are both odd and negative.
-
+odd_negative_numbers = [num for num in numbers if num % 2 == 1 and num < 0]
+print(odd_negative_numbers)
 # Exercise 17 - Make a variable named numbers_plus_5. In it, return a list containing each number plus five. 
+numbers_plus_5 = [num + 5 for num in numbers]
+print(numbers_plus_5)
+# BONUS Make a variable named "primes" that is a list containing the prime numbers in the numbers list.
+#  *Hint* you may want to make or find a helper function that determines if a given number is prime or not.
 
-# BONUS Make a variable named "primes" that is a list containing the prime numbers in the numbers list. *Hint* you may want to make or find a helper function that determines if a given number is prime or not.
+
+
+

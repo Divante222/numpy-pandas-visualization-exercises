@@ -5,10 +5,10 @@ from pydataset import data
 import random
 import matplotlib.pyplot as plt
 
-# fruits = ["kiwi", "mango", "strawberry", "pineapple", "gala apple", 
-#           "honeycrisp apple", "tomato", "watermelon", "honeydew", 
-#           "kiwi", "kiwi", "kiwi", "mango", "blueberry", "blackberry",
-#           "gooseberry", "papaya"]
+fruits = ["kiwi", "mango", "strawberry", "pineapple", "gala apple", 
+          "honeycrisp apple", "tomato", "watermelon", "honeydew", 
+          "kiwi", "kiwi", "kiwi", "mango", "blueberry", "blackberry",
+          "gooseberry", "papaya"]
 
 # fruits = pd.Series(fruits)
 
@@ -87,7 +87,7 @@ import matplotlib.pyplot as plt
 # # Capitalize all the string values in fruits.
 # print('\n\n\n')
 # print(fruits.str.upper())
-
+# fruits.str.capitalize()
 
 # # Count the letter "a" in all the string values (use string vectorization).
 # print('\n')
@@ -118,7 +118,10 @@ import matplotlib.pyplot as plt
 
 # # Write the code to get the longest string value from fruits.
 # print('\n')
-# print(max(fruits, key=len))
+
+print(max(fruits, key=len))
+
+
 
 # # Write the code to get the string values with 5 or more letters in the name.
 
