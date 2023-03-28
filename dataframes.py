@@ -185,7 +185,7 @@ total_true = mammals[mammals.specials == True]
 
 # How many animals are hoppers that are above the median speed? What percentage is this?
 the_answer = mammals[mammals.hoppers == True]
-hoppers_above_mean_speed = the_answer[the_answer.speed > mammals.speed.mean()]
+hoppers_above_mean_speed = the_answer[the_answer.speed > mammals.speed.median()]
 
 print(hoppers_above_mean_speed.hoppers.count(),'hoppers are above the average speed of animals')
 
