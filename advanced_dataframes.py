@@ -189,9 +189,10 @@ mpg = data('mpg')
 
 
 # How many different models are there?
-print(mpg.groupby('model').count())
-print(len(mpg.groupby('model').count()))
-
+# print(mpg.groupby('model').count())
+print('\n\n\n')
+print('the number of models:', len(mpg.groupby('model').count()))
+print('\n\n\n')
 
 # Create a column named mileage_difference like you did in the DataFrames exercises; this column should contain the difference between highway and city mileage for each car.
 mpg['mileage_difference'] = mpg.hwy - mpg.cty
