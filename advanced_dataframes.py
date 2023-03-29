@@ -142,25 +142,25 @@ users = pd.DataFrame({
 
 
 # What is the result of using a right join on the DataFrames?
-print(pd.merge(roles, users, how='right'))
+# print(pd.merge(roles, users, how='right'))
 
 
-# What is the result of using an outer join on the DataFrames?
-print(pd.merge(roles,users,how='outer'))  
+# # What is the result of using an outer join on the DataFrames?
+# print(pd.merge(roles,users,how='outer'))  
 
 
-# What happens if you drop the foreign keys from the DataFrames and try to merge them?
-users = pd.DataFrame({
+# # What happens if you drop the foreign keys from the DataFrames and try to merge them?
+# users = pd.DataFrame({
     
-    'name': ['bob', 'joe', 'sally', 'adam', 'jane', 'mike'],
-    'role_id': [1, 2, 3, 3, np.nan, np.nan]
-})
-print()
-print(pd.merge(roles, users, how='inner'))
+#     'name': ['bob', 'joe', 'sally', 'adam', 'jane', 'mike'],
+#     'role_id': [1, 2, 3, 3, np.nan, np.nan]
+# })
+# print()
+# print(pd.merge(roles, users, how='inner'))
 
 
-# Load the mpg dataset from PyDataset.
-mpg = data('mpg')
+# # Load the mpg dataset from PyDataset.
+# mpg = data('mpg')
 
 
 
@@ -184,37 +184,37 @@ mpg = data('mpg')
 # print(mpg.describe())
 
 
-# How many different manufacturers are there?
-print('the number of manufacturers:', len(mpg.groupby('manufacturer').agg('count')))
-print(mpg.groupby('manufacturer').agg('count'))
+# # How many different manufacturers are there?
+# print('the number of manufacturers:', len(mpg.groupby('manufacturer').agg('count')))
+# print(mpg.groupby('manufacturer').agg('count'))
 
 
-# How many different models are there?
-# print(mpg.groupby('model').count())
-print('\n\n\n')
-print('the number of models:', len(mpg.groupby('model').count()))
-print('\n\n\n')
+# # How many different models are there?
+# # print(mpg.groupby('model').count())
+# print('\n\n\n')
+# print('the number of models:', len(mpg.groupby('model').count()))
+# print('\n\n\n')
 
-# Create a column named mileage_difference like you did in the DataFrames exercises; this column should contain the difference between highway and city mileage for each car.
-mpg['mileage_difference'] = mpg.hwy - mpg.cty
-
-
-
-# Create a column named average_mileage like you did in the DataFrames exercises; this is the mean of the city and highway mileage.
-mpg['average_mileage'] = (mpg.cty + mpg.hwy) / 2
+# # Create a column named mileage_difference like you did in the DataFrames exercises; this column should contain the difference between highway and city mileage for each car.
+# mpg['mileage_difference'] = mpg.hwy - mpg.cty
 
 
 
-# Create a new column on the mpg dataset named is_automatic that holds boolean values denoting whether the car has an automatic transmission.
-mpg['is_automatic'] = np.where(mpg.trans.str.contains('auto') , True, False)
+# # Create a column named average_mileage like you did in the DataFrames exercises; this is the mean of the city and highway mileage.
+# mpg['average_mileage'] = (mpg.cty + mpg.hwy) / 2
+
+
+
+# # Create a new column on the mpg dataset named is_automatic that holds boolean values denoting whether the car has an automatic transmission.
+# mpg['is_automatic'] = np.where(mpg.trans.str.contains('auto') , True, False)
 
 
     
 
-# Using the mpg dataset, find out which which manufacturer has the best miles per gallon on average?
-the_answer = mpg.groupby('manufacturer').agg('mean')
-the_answer = the_answer.sort_values(by='average_mileage', ascending=False)
-print(the_answer[['average_mileage']].round(2))
+# # Using the mpg dataset, find out which which manufacturer has the best miles per gallon on average?
+# the_answer = mpg.groupby('manufacturer').agg('mean')
+# the_answer = the_answer.sort_values(by='average_mileage', ascending=False)
+# print(the_answer[['average_mileage']].round(2))
 
 
 
@@ -235,4 +235,92 @@ print(the_answer[['average_mileage']].round(2))
 # print(the_answer['average_mileage'].round(2))
 
 
-print(mpg.describe(include='all'))
+# print(mpg.describe(include='all'))
+
+
+# ===================================================================# ===================================================================# ===================================================================
+# Use your get_db_url function to help you explore the data from the chipotle database.
+
+
+def get_db_url(username, hostname, password, db_name):
+    return f'mysql+pymysql://{username}:{password}@{hostname}/{db_name}'
+
+db_name = 'chipotle'
+url = get_db_url(username, hostname, password, db_name)
+
+query = '''
+select * from orders;
+'''
+
+
+
+
+
+
+
+
+
+# What is the total price for each order?
+# titles = pd.read_sql(query, url)
+# titles['item_price'] = titles.item_price.str.replace('$','')
+# titles.item_price = titles.item_price.astype(float)
+# print(titles.groupby('order_id').agg('sum'))
+
+
+
+# What are the most popular 3 items?
+# titles = pd.read_sql(query, url)
+# print(titles.item_name.value_counts().head(3))
+
+
+
+# Which item has produced the most revenue?
+# titles = pd.read_sql(query, url)
+# titles['item_price'] = titles.item_price.str.replace('$','')
+# titles.item_price = titles.item_price.astype(float)
+# print(titles.groupby('item_name').agg())
+
+
+
+
+# Join the employees and titles DataFrames together.
+# db_name = 'employees'
+# url = get_db_url(username, hostname, password, db_name)
+# query = '''
+# select * from employees
+# join titles using(emp_no)
+# limit 10
+# ;
+# '''
+# employees = pd.read_sql(query, url)
+
+
+
+# print(employees)
+
+
+
+
+
+
+# For each title, find the hire date of the employee that was hired most recently with that title.
+
+# print(employees.groupby('title').agg('max'))
+
+
+
+
+
+# Write the code necessary to create a cross tabulation of the number of titles by department. 
+# (Hint: this will involve a combination of SQL code to pull the necessary data and python/pandas code to perform the manipulations.)
+db_name = 'employees'
+url = get_db_url(username, hostname, password, db_name)
+query = '''
+select * from departments;
+
+'''
+employees = pd.read_sql(query, url)
+
+print(employees)
+print()
+
