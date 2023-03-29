@@ -41,3 +41,4 @@ the_choice = np.random.choice(['a','b'], len(new_dt))
 
 print(the_choice)
 print(type(the_choice))
+
