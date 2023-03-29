@@ -184,8 +184,8 @@ mpg = data('mpg')
 
 
 # How many different manufacturers are there?
-# print(len(mpg.groupby('manufacturer').agg('count')))
-# print(mpg.groupby('manufacturer').agg('count'))
+print('the number of manufacturers:', len(mpg.groupby('manufacturer').agg('count')))
+print(mpg.groupby('manufacturer').agg('count'))
 
 
 # How many different models are there?
@@ -211,16 +211,24 @@ mpg['is_automatic'] = np.where(mpg.trans.str.contains('auto') , True, False)
     
 
 # Using the mpg dataset, find out which which manufacturer has the best miles per gallon on average?
-mpg = mpg.sort_values(by='average_mileage', ascending=False)
+the_answer = mpg.groupby('manufacturer').agg('mean')
+the_answer = the_answer.sort_values(by='average_mileage', ascending=False)
+print(the_answer[['average_mileage']].round(2))
 
 
+
+# ===================================================================
 # Do automatic or manual cars have better miles per gallon?
-the_auto_mpg = mpg[mpg.trans.str.contains('auto')]
+# the_auto_mpg = mpg[mpg.trans.str.contains('auto')]
 
-the_manual_mpg = mpg[mpg.trans.str.contains('manual')]
+# the_manual_mpg = mpg[mpg.trans.str.contains('manual')]
 
-the_auto_mpg = the_auto_mpg.sort_values(by='average_mileage', ascending=False)
-print(the_auto_mpg.head())
-print('\n\n\n')
-the_manual_mpg = the_manual_mpg.sort_values(by='average_mileage', ascending=False)
-print(the_manual_mpg.head())
+# the_auto_mpg = the_auto_mpg.sort_values(by='average_mileage', ascending=False)
+# print(the_auto_mpg.head())
+# print('\n\n\n')
+# the_manual_mpg = the_manual_mpg.sort_values(by='average_mileage', ascending=False)
+# print(the_manual_mpg.head())
+# print('\n\n\n')
+# the_answer = mpg.groupby('is_automatic').agg('mean')
+# the_answer = the_answer.sort_values(by='average_mileage', ascending = False)
+# print(the_answer['average_mileage'].round(2))
