@@ -165,6 +165,7 @@ mpg = data('mpg')
 
 
 # Output and read the documentation for the mpg dataset.
+# mpg = data('mpg', show_doc=True) 
 # print(help(mpg))
 
 
@@ -232,3 +233,6 @@ print(the_answer[['average_mileage']].round(2))
 # the_answer = mpg.groupby('is_automatic').agg('mean')
 # the_answer = the_answer.sort_values(by='average_mileage', ascending = False)
 # print(the_answer['average_mileage'].round(2))
+
+
+print(mpg.describe(include='all'))
