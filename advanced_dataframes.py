@@ -260,36 +260,46 @@ select * from orders;
 
 
 
-# What is the total price for each order?
+# # What is the total price for each order?
 # titles = pd.read_sql(query, url)
 # titles['item_price'] = titles.item_price.str.replace('$','')
 # titles.item_price = titles.item_price.astype(float)
 # print(titles.groupby('order_id').agg('sum'))
 
+# print('\n\n\n')
 
-
-# What are the most popular 3 items?
+# # What are the most popular 3 items?
 # titles = pd.read_sql(query, url)
-# print(titles.item_name.value_counts().head(3))
+# the_answer = titles.groupby(by='item_name').agg('sum')
+# print(the_answer.sort_values('quantity', ascending=False).head(3))
 
 
 
-# Which item has produced the most revenue?
+# # print(titles.item_name.value_counts().head(3))
+
+
+# print('\n\n\n')
+
+# # Which item has produced the most revenue?
 # titles = pd.read_sql(query, url)
 # titles['item_price'] = titles.item_price.str.replace('$','')
 # titles.item_price = titles.item_price.astype(float)
-# print(titles.groupby('item_name').agg())
+# the_answer = titles.groupby('item_name').agg('sum')
+
+# print(the_answer.sort_values(by='item_price', ascending=False).head(1))
 
 
+# print('\n\n\n')
 
 
-# Join the employees and titles DataFrames together.
+# # Join the employees and titles DataFrames together.
+
 # db_name = 'employees'
 # url = get_db_url(username, hostname, password, db_name)
 # query = '''
 # select * from employees
 # join titles using(emp_no)
-# limit 10
+# limit 20
 # ;
 # '''
 # employees = pd.read_sql(query, url)
@@ -299,28 +309,43 @@ select * from orders;
 # print(employees)
 
 
+# print('\n\n\n')
 
 
 
+# # For each title, find the hire date of the employee that was hired most recently with that title.
 
-# For each title, find the hire date of the employee that was hired most recently with that title.
-
-# print(employees.groupby('title').agg('max'))
-
+# print(employees.groupby('title')['hire_date'].agg('max'))
 
 
-
+# print('\n\n\n')
+# print('hello')
 
 # Write the code necessary to create a cross tabulation of the number of titles by department. 
 # (Hint: this will involve a combination of SQL code to pull the necessary data and python/pandas code to perform the manipulations.)
+
 db_name = 'employees'
 url = get_db_url(username, hostname, password, db_name)
+
 query = '''
-select * from departments;
+select * from employees
+join titles using(emp_no)
+join dept_emp using(emp_no)
+join departments using(dept_no)
+where (employees.emp_no, titles.from_date) in (select employees.emp_no, max(titles.from_date) from employees
+							join titles using(emp_no)
+							join dept_emp using(emp_no)
+							join departments using(dept_no)
+							group by employees.emp_no)
+limit 20
 
+; 
 '''
+print('\n\n\n')
 employees = pd.read_sql(query, url)
+# print(employees)
 
-print(employees)
-print()
+
+print(pd.crosstab(employees.dept_name, employees.title))
+# print()
 
